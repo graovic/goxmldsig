@@ -489,6 +489,8 @@ func (ctx *ValidationContext) Validate(el *etree.Element) (*etree.Element, error
 	if err != nil {
 		return nil, err
 	}
+	
+	log.Printf("this is sig %+v ", sig)
 
 	cert, err := ctx.verifyCertificate(sig)
 	if err != nil {
